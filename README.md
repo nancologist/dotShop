@@ -32,3 +32,10 @@ __Admin Methods:__
 the methods in the ``Product`` class which are annotated with ``// admin`` can be seen as an extension of project. But having admin functionalities is not a main demand. The methods have been implemented for demonstration.
 
 ___
+
+## 4. Possible Enhancements
+
+* Implementing a database (MongoDB or MySQL for example)
+* Admin Panel to update, delete or create ``Products``.
+
+___

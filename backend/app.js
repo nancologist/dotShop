@@ -4,10 +4,10 @@ const shopController = require('./controllers/shop')
 
 const app = express();
 
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}));
+// Middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
 
+// Controllers
 app.use('/shop', shopController);
-
 
 app.listen(8989);

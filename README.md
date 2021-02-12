@@ -7,10 +7,11 @@
 
 ### 1.2. Run Project
 1. ``cd dotShop/backend``
-2. ``npm start`` (Server runs on localhost port=8989)
+2. ``npm start`` (Server runs on localhost:8989)
 3. Open a new Terminal window.
 4. ``cd dotShop/frontend``
-5. ``npm start`` (Webapp runs on )
+5. ``npm start`` (Webapp runs on localhost:3000)
+6. Go to the [http://localhost:3000](http://localhost:3000)
 
 ___
 
@@ -22,6 +23,12 @@ ___
 * ``body-parser`` to handle the body of requests and parse the data stream.
 
 ### 2.2. Frontend
+* ``create-react-app`` : to bootstrap a react project with webpack
+* ``axios`` : to handle ajax requests (like fetch API)
+* ``react-router-dom`` : simulates having different routes in a SPA like a normal webapp.
+* ``redux`` : an independent state manager.
+* ``react-redux`` : integrates ``redux`` in a react app.
+* ``redux-thunk`` : a middleware to handle async functions for Redux Actions.
 
 ___
 

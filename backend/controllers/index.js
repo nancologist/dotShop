@@ -1,8 +1,9 @@
 const { Router } = require('express');
 
 class BaseController {
-    constructor() {
+    constructor(mainRoute) {
         this.router = new Router();
+        this.mainRoute = mainRoute;
     }
 }
 

@@ -4,8 +4,7 @@ const Product = require('../models/product');
 
 class AdminController extends BaseController {
     constructor(mainRoute) {
-        super();
-        this.mainRoute = mainRoute;
+        super(mainRoute);
         this.router.post('/', this.addSomeProducts);
     }
 

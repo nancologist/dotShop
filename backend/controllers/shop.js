@@ -3,8 +3,8 @@ const Product = require('../models/product');
 
 class ShopController extends BaseController {
     constructor(mainRoute) {
-        super();
-        this.mainRoute = mainRoute;
+        super(mainRoute);
+        
         this.router.get('/', this.getProducts);
     }
 

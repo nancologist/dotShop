@@ -1,4 +1,4 @@
-# dotShop
+# <span style="color: #97bf0d;">dot</span><span style="color: #004272;">Shop</span>
 
 ## 1. Install and run the project
 
@@ -7,8 +7,10 @@
 
 ### 1.2. Run Project
 1. ``cd dotShop/backend``
-2. ``npm start`` (runs on localhost port=8989)
-3. ...
+2. ``npm start`` (Server runs on localhost port=8989)
+3. Open a new Terminal window.
+4. ``cd dotShop/frontend``
+5. ``npm start`` (Webapp runs on )
 
 ___
 

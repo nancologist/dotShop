@@ -1,11 +1,21 @@
-const router = require('express').Router();
+const BaseController = require('./index');
+const Product = require('../models/product');
 
-const testIt = (req, res, next) => {
-    res.json({
-        msg: 'Hallo Helmut!!!'
-    });
+class ShopController extends BaseController {
+    constructor(mainRoute) {
+        super();
+        this.mainRoute = mainRoute;
+        this.router.get('/', this.getProducts);
+    }
+
+    getProducts (req, res, next) {
+        const products = Product.getAll()    
+        res.json({ products });
+    };
+
+    getRouter() {
+        return this.router;
+    }
 }
 
-router.get('/', testIt)
-
-module.exports = router;
+module.exports = ShopController;

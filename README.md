@@ -6,7 +6,7 @@
 * You should have already installed the NodeJS on your machine. check this [link](https://nodejs.org/en/).
 
 ### 1.2. Run Project
-1. ``cd dotshop/backend``
+1. ``cd dotShop/backend``
 2. ``npm start`` (runs on localhost port=8989)
 3. ...
 

@@ -1,10 +1,11 @@
+
+const BaseController = require('./index');
 const Product = require('../models/product');
 
-class AdminController {
-    constructor({ mainRoute, router }) {
+class AdminController extends BaseController {
+    constructor(mainRoute) {
+        super();
         this.mainRoute = mainRoute;
-
-        this.router = router;
         this.router.post('/', this.addSomeProducts);
     }
 
@@ -22,8 +23,3 @@ class AdminController {
 }
 
 module.exports = AdminController;
-
-// Get methods in an object:
-// let props = [];
-// props = props.concat(Object.getOwnPropertyNames(obj));
-// console.log(props);

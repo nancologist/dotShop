@@ -1,7 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
+import './App.css';
+import { initGetProducts } from './store/thunks';
+
+function App(props) {
+  const { getProducts } = props;
+
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
+
   return (
     <div className="App">
       {/* Navigation ... */}
@@ -13,4 +22,14 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (reduxState) => {
+  return {
+    products: reduxState.products
+  };
+}
+
+const mapDispatchToProps = {
+  getProducts: () => initGetProducts()
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

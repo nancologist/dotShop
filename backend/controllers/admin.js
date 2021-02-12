@@ -1,12 +1,29 @@
-const router = require('express').Router();
 const Product = require('../models/product');
 
-const addSomeProducts = (req, res, next) => {
-    new Product('13j4k', 'Apple', 0.65).save();
-    new Product('jkl42', 'Orange', 0.8).save();
-    new Product('mv2kl', 'Banana', 1.3).save();
-};
+class AdminController {
+    constructor({ mainRoute, router }) {
+        this.mainRoute = mainRoute;
 
-router.post('/', addSomeProducts)
+        this.router = router;
+        this.router.post('/', this.addSomeProducts);
+    }
 
-module.exports = router;
+    addSomeProducts (req, res, next) {
+        new Product('13j4k', 'Apple', 0.65).save();
+        new Product('jkl42', 'Orange', 0.8).save();
+        new Product('mv2kl', 'Banana', 1.3).save();
+    
+        res.json({ msg: 'Products successfully added!' });
+    };
+
+    getRouter() {
+        return this.router;
+    }
+}
+
+module.exports = AdminController;
+
+// Get methods in an object:
+// let props = [];
+// props = props.concat(Object.getOwnPropertyNames(obj));
+// console.log(props);

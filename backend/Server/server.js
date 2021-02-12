@@ -1,12 +1,21 @@
 class Server {
     constructor({ port, controllers, middlewares, express }) {
         this.app = express();
+        this.port = port;
         this.controllers = controllers;
         this.middlewares = middlewares;
 
         this.mountMiddlewares();
         this.mountControllers();
-        this.app.listen(port);
+        this.runServer();
+    }
+    
+    mountControllers() {
+        this.controllers.forEach(
+            (ctrl) => { 
+                this.app.use(ctrl.mainRoute, ctrl.getRouter())
+            }
+        );
     }
 
     mountMiddlewares() {
@@ -14,9 +23,11 @@ class Server {
             this.app.use(middleware);
         });
     }
-
-    mountControllers() {
-        this.controllers.forEach((ctrl) => { this.app.use(ctrl.xxx, ctrl) });
+    
+    runServer() {
+        this.app.listen(this.port, () => {
+            console.log(`Server: Up and running on port ${this.port}`);
+        });
     }
 }
 

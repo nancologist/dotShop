@@ -2,14 +2,15 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
-import { initGetProducts } from './store/thunks';
+import { dispatchGetProducts, dispatchPostProducts } from './store/thunks';
 
 function App(props) {
   const { getProducts, products } = props;
 
   useEffect(() => {
-    getProducts();
-  }, [getProducts]);
+    if(!!responseMsg) alert(responseMsg);
+  }, [responseMsg]);
+
 
   return (
     <div className="App">
@@ -24,12 +25,14 @@ function App(props) {
 
 const mapStateToProps = (reduxState) => {
   return {
-    products: reduxState.products
+    products: reduxState.products,
+    responseMsg: reduxState.responseMsg
   };
 }
 
 const mapDispatchToProps = {
-  getProducts: () => initGetProducts()
+  getProducts: () => dispatchGetProducts(),
+  addSomeProducts: () => dispatchPostProducts()
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

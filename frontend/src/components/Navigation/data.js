@@ -8,8 +8,8 @@ export const navItems = [
         name: 'Shop'
     },
     {
-        route: '/orders',
-        name: 'Orders'
+        route: '/cart',
+        name: 'Cart'
     },
     {
         route: '/admin',

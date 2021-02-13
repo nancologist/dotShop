@@ -5,7 +5,7 @@ import './App.css';
 import { initGetProducts } from './store/thunks';
 
 function App(props) {
-  const { getProducts } = props;
+  const { getProducts, products } = props;
 
   useEffect(() => {
     getProducts();

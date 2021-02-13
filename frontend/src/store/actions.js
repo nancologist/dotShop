@@ -4,8 +4,9 @@ export const actionTypes = {
 
 const { GET_PRODUCTS } = actionTypes;
 
-export const getProducts = () => {
+export const getProducts = (products) => {
     return {
-        type: GET_PRODUCTS
+        type: GET_PRODUCTS,
+        products
     }
 }

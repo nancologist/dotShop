@@ -3,7 +3,12 @@
 ## 1. Install and run the project
 
 ### 1.1. Install
-* You should have already installed the NodeJS on your machine. check this [link](https://nodejs.org/en/).
+1. Pull project from [Github](https://github.com/nancologist/dotShop)
+2. You should have already installed NodeJS on your machine. check this [link](https://nodejs.org/en/).
+3. ``cd dotShop/backend``
+4. ``npm install``
+5. ``cd ../frontend``
+6. ``npm install``
 
 ### 1.2. Run Project
 1. ``cd dotShop/backend``

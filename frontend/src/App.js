@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import './App.css';
 import { dispatchGetProducts, dispatchPostProducts } from './store/thunks';
@@ -21,15 +22,6 @@ function App(props) {
     <div className="App">
       {/* Navigation ... */}
       {/* Switch ... */}
-
-      {/* Admin adds some products: */}
-      <button onClick={handleClick}>ADD PRODUCTS</button>
-
-      <div>{props.products.map(prod => (
-        // <h3>{prod.name}</h3>
-        <img src={prod.imgPath} />
-      ))}</div>
-
     </div>
   );
 }

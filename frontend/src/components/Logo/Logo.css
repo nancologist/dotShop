@@ -1,0 +1,15 @@
+.logo {
+    font-family: 'Audiowide';
+    /* font-family: 'Racing Sans One'; */
+    /* font-family: 'Orbitron'; */
+    /* font-family: 'Russo One'; */
+    font-size: 40px;
+}
+
+.logo__word1 {
+    color: #97bf0d;
+}
+
+.logo__word2 {
+    color: #004272;
+}

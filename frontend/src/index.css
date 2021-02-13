@@ -3,6 +3,13 @@
 /* Maven Pro, Overlock (700), Lato, Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Maven+Pro:wght@400;600;800&family=Montserrat:ital,wght@0,100;0,400;0,600;1,900&family=Overlock:wght@700&display=swap');
 
+/* Russo One
+Orbitron
+Audiowide
+Michroma
+Racing Sans One */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&family=Orbitron:wght@500&family=Racing+Sans+One&family=Russo+One&display=swap');
+
 /* -------------------- */
 
 *, *::before, *::after {
@@ -18,6 +25,8 @@
     --primary-lighter2: #004d99;
     --success: #360;
     --error: #603;
+
+    --app-width: 70%;
 }
   
 /* Remove increase and decrease arrow-buttons from input:number ---- */
@@ -38,11 +47,7 @@ input[type=number] {
 
 body {
     color: var(--primary);
-    font-family: 'Montserrat';
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {

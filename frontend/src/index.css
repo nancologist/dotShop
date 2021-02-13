@@ -48,6 +48,7 @@ input[type=number] {
 body {
     color: var(--primary);
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
 }
 
 a {
@@ -62,4 +63,9 @@ a:visited {
 
 ul {
     list-style: none;
+}
+
+.page-container {
+    padding-top: 10px;
+    width: var(--app-width);
 }

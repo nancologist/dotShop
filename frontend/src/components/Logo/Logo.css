@@ -4,6 +4,10 @@
     /* font-family: 'Orbitron'; */
     /* font-family: 'Russo One'; */
     font-size: 40px;
+
+    /* Prevent text selection/highlight: */
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .logo__word1 {

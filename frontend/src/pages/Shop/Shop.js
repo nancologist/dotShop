@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 import { dispatchGetProducts } from '../../store/thunks';
+import Card from '../../components/Card/Card';
 import './Shop.css';
 
 const Shop = (props) => {
@@ -14,10 +15,11 @@ const Shop = (props) => {
     return (
         <div className="shop">
             {hasArticles ?
-                <div>{props.products.map(prod => (
-                    // <Card />
-                    <img src={prod.imgPath} key={prod.id} />
-                ))}</div>
+                <div>{
+                    props.products.map(prod => (
+                        <Card key={prod.id} product={prod} />
+                    ))
+                }</div>
                 : <div className="msg-box--error">Currently there's no product available, please come back later again.</div>
             }
         </div>

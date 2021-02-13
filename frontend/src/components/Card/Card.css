@@ -1,0 +1,12 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: inline-block;
+    min-width: 200px;
+    padding: 5px;
+}
+
+.card__img-container img {
+    height: 130px;
+    /* width: 100px; */
+}

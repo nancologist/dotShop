@@ -24,7 +24,7 @@ Racing Sans One */
     --primary-lighter1: #004080;
     --primary-lighter2: #004d99;
     --success: #360;
-    --error: #603;
+    --error: #600;
 
     --app-width: 70%;
 }
@@ -59,6 +59,27 @@ a {
 
 a:visited {
     color: inherit;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    outline: none;
+    /* inherit font & color from ancestor */
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
 }
 
 ul {

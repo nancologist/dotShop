@@ -1,5 +1,18 @@
 .App {
     margin: auto;
+    padding-top: 10px;
     text-align: center;
     width: var(--app-width);
+}
+
+.App button {
+    background-color: var(--primary);
+    border-radius: 5px;
+    color: #fff;
+    padding: 7px 10px;
+    transition: 300ms;
+}
+
+.App button:hover {
+    opacity: 0.9;
 }

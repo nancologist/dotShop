@@ -13,7 +13,7 @@ const Navigation = () => {
                     <li className="nav-menu__item" key={navItem.route}>
                         <NavLink 
                             exact to={navItem.route}
-                            activeStyle={{/* TODO LATER */}}
+                            activeStyle={{ fontWeight: 'bolder' }}
                         >
                             {navItem.name}
                         </NavLink>

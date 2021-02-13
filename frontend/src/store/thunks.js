@@ -16,17 +16,3 @@ export const dispatchGetProducts = () => {
         dispatch(getProducts(res.data.products));
     }
 };
-
-export const dispatchPostProducts = () => {
-    return async (dispatch) => {
-        let res;
-        
-        try {
-            res = await axios.post('http://localhost:8989/admin');
-        } catch (error) {
-            console.log(error);
-        }
-
-        dispatch(postProducts(res.data.msg));
-    }
-};

@@ -1,0 +1,8 @@
+.msg-box--error {
+    background-color: var(--error);
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    margin-top: 100px;
+    padding: 15px 27px;
+}

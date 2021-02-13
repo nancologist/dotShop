@@ -1,6 +1,6 @@
 class Server {
     constructor({ port, controllers, middlewares, express }) {
-        this.app = express();
+        this.app = require('express')();
         this.port = port;
         this.controllers = controllers;
         this.middlewares = middlewares;

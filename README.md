@@ -26,6 +26,7 @@ ___
 * ``nodemon`` (Dev Dependency) : to hot reload the nodejs application.
 * ``express`` : Web framework to handle route, requests and so on.
 * ``body-parser`` to handle the body of requests and parse the data stream.
+* imagebb.com : to host media files.
 
 ### 2.2. Frontend
 * ``create-react-app`` : to bootstrap a react project with webpack

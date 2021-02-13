@@ -1,0 +1,60 @@
+/* Fonts -------------- */
+
+/* Maven Pro, Overlock (700), Lato, Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Maven+Pro:wght@400;600;800&family=Montserrat:ital,wght@0,100;0,400;0,600;1,900&family=Overlock:wght@700&display=swap');
+
+/* -------------------- */
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-darker: #00264d ;
+    --primary: #036 ;
+    --primary-lighter1: #004080;
+    --primary-lighter2: #004d99;
+    --success: #360;
+    --error: #603;
+}
+  
+/* Remove increase and decrease arrow-buttons from input:number ---- */
+  
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ---------------------------------------------------------- */
+
+body {
+    color: var(--primary);
+    font-family: 'Montserrat';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+a:visited {
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}

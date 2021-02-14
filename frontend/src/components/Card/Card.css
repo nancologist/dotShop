@@ -1,39 +1,55 @@
 .card {
+    display: inline-grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 
+        "pic pic"
+        "pic pic"
+        "pic pic"
+        "name name"
+        "price btn";
+        
+
     border: 1px solid #ccc;
     border-radius: 2px;
-    display: inline-block;
+    
     height: 300px;
     min-width: 200px;
     margin: 5px;
     padding: 5px;
 }
 
+.card strong {
+    grid-area: name;
+    align-self: flex-start;
+}
+
+.grid span {
+    grid-area: price;
+}
+
+.card button {
+    grid-area: btn;
+    justify-self: flex-end;
+
+    align-items: center;
+    display: inline-flex;
+    font-size: 1.5rem;
+    height: 45px; width: 45px;
+    justify-content: center;
+    margin-right: 8px;
+    padding: 15px;
+}
+
+.card__img-container {
+    grid-area: pic;
+}
+
 .card__img-container img {
     border-bottom: 1px solid var(--primary);
     height: 130px;
     padding: 5px;
-}
-
-.card__details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 5px;
-    width: 100%;
-}
-
-.card__price-add {
-    align-items: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card__price-add button {
-    align-items: center;
-    border-radius: 50%;
-    display: flex;
-    font-size: 1.5rem;
-    height: 50px; width: 50px;
-    justify-content: center;
-    padding: 15px;
 }

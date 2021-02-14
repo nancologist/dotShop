@@ -9,13 +9,11 @@ const Card = ({ product }) => {
             <div className="card__img-container">
                 <img src={ imgPath } />
             </div>
-            <div className="card__details">
-                <div><strong>{ name }</strong></div>
-                <div className="card__price-add">
-                    <span>{ price.toFixed(2) }€</span>
-                    <button> <Icon path={mdiPlusThick} /> </button>
-                </div>
-            </div>
+            <strong>{ name }</strong>
+            <span>{ price.toFixed(2) }€</span>
+            <button>
+                <Icon path={mdiPlusThick} />
+            </button>
         </div>
     );
 };

@@ -35,6 +35,8 @@ ___
 * ``redux`` : an independent state manager.
 * ``react-redux`` : integrates ``redux`` in a react app.
 * ``redux-thunk`` : a middleware to handle async functions for Redux Actions.
+* ``@mdi/js`` : Material Design Icons
+* ``@mdi/react`` : Helper components to integrate Material Design icons.
 
 ___
 

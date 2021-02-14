@@ -1,3 +1,5 @@
+import { Icon } from '@mdi/react';
+import { mdiPlusThick } from '@mdi/js';
 import './Card.css'
 
 const Card = ({ product }) => {
@@ -8,8 +10,11 @@ const Card = ({ product }) => {
                 <img src={ imgPath } />
             </div>
             <div className="card__details">
-                <strong>{ name }</strong>
-                <span>{ price }€</span>
+                <div><strong>{ name }</strong></div>
+                <div className="card__price-add">
+                    <span>{ price.toFixed(2) }€</span>
+                    <button> <Icon path={mdiPlusThick} /> </button>
+                </div>
             </div>
         </div>
     );

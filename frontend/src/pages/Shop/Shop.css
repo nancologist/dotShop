@@ -1,8 +1,32 @@
-.msg-box--error {
+.shop__list--empty {
     background-color: var(--error);
     border-radius: 5px;
     color: white;
     display: inline-block;
     margin-top: 100px;
     padding: 15px 27px;
+}
+
+.shop__list {
+    display: flex;
+    justify-content: center;
+}
+
+.shop__msg {
+    background-color: var(--success);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;    
+    color: white;
+    display: inline-block;
+    width: 300px;
+    padding: 10px 0;
+    margin: auto;
+    position: fixed;
+    bottom: 20px;
+    right: -300px;
+    transition: 200ms;
+}
+
+.shop__msg--show {
+    right: 0;
 }

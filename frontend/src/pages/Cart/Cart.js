@@ -2,12 +2,11 @@ import { connect } from 'react-redux';
 
 const Cart = (props) => {
     return (
-        // <h1>Your cart is empty!</h1>
         <div>
-            {props.cartItems.map((item) => { return(
+            {props.cartItems.map((item) => (
                 <div key={item.id}>{item.name}, {item.unit}
                 </div>
-            ); })}
+            ))}
         </div>
     )
 };

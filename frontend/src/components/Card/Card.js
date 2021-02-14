@@ -12,7 +12,7 @@ const Card = ({ product }) => {
             <strong>{ name }</strong>
             <span>{ price.toFixed(2) }€</span>
             <button>
-                <Icon path={mdiPlusThick} />
+                <Icon path={mdiPlusThick} size={1} />
             </button>
         </div>
     );

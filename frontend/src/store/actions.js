@@ -1,8 +1,9 @@
 export const actionTypes = {
     GET_PRODUCTS: 'GET_PRODUCTS',
+    ADD_TO_CART: 'ADD_TO_CART',
 }
 
-const { GET_PRODUCTS } = actionTypes;
+const { GET_PRODUCTS, ADD_TO_CART } = actionTypes;
 
 export const getProducts = (products) => {
     return {
@@ -10,3 +11,10 @@ export const getProducts = (products) => {
         products
     }
 };
+
+export const dispatchAddToCart = (id) => {
+    return {
+        type: ADD_TO_CART,
+        productId: id
+    }
+}

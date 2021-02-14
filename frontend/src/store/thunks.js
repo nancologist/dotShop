@@ -1,7 +1,5 @@
 import axios from 'axios';
-import { actionTypes, getProducts, postProducts } from './actions'
-
-const { GET_PRODUCTS } = actionTypes;
+import { getProducts } from './actions'
 
 export const dispatchGetProducts = () => {
     return async (dispatch) => {

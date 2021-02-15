@@ -20,19 +20,27 @@
 
 ### 1.3. How App works
 
-1. At first there's no product and coupons in the shop. 
+1. At first there's no product in the shop and no coupon has been registered yet. 
 
 2. As an "Admin" you should add some Coupons and Products to the database. 
 
 3. This action is mocked through a POST request to the ``/admin``. (_See backend/controllers/admin.js_)
 
-4. For that you can use "Admin" tab in the SPA (Single Page Application). There's a button to send this POST request.
+4. For that you can use "Admin" tab in the SPA (Single Page Application). There's a button to send this POST request. 
 
 5. Now as a Customer you can go back to the "Shop" tab and add some Products into the cart. (For a better UX there's a sliding-in message when you add a Product to the Cart)
 
 6. Now for the checkout you should go to the "Cart" tab and there you can increase or decrease any item you have added to the cart and/or redeem a coupon to get some offs.
 
 7. Coupon codes will be validated by backend and database.
+
+8. Currently there are 4 coupons, which will be added to database by Admin:
+    * New Year - Code: X68SWL
+    * Birthday - Code: F32TM9
+    * Summer - Code: R5V9BU
+    * Easter - Code: K18XQH
+
+You can try one of these codes as a valid coupon.
 
 
 ___

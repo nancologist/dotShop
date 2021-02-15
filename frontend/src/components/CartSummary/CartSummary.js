@@ -19,7 +19,7 @@ const CartSummary = ({ sum }) => {
                     <span className="num">{(orderSum - coupon).toFixed(2)} €</span>
                 </div>
             </div>
-            <button className="sum__btn">Confirm Order</button>
+            <button className="sum__btn">CHECKOUT</button>
         </div>
     );
 };

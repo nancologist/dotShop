@@ -51,7 +51,7 @@ const Cart = (props) => {
                             <div className="coupon__title">Coupon</div>
                             <div className="coupon__form">
                                 <input type="text" className="coupon__form__input"/>
-                                <button className="coupon__form__input">Redeem</button>
+                                <button className="coupon__form__btn">Redeem</button>
                             </div>
                         </div>
                     </div>

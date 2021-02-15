@@ -1,4 +1,5 @@
 module.exports.DB = {
     products: [],
-    orders: []
-}
+    orders: [],
+    coupons: []
+};

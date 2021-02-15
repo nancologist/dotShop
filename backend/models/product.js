@@ -13,7 +13,7 @@ class Product {
     }
 
     static getById(id) {
-        const product = DB.products.filter(prod => prod.id === id);
+        const product = DB.products.find(prod => prod.id === id);
         return product;
     }
 

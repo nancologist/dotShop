@@ -1,25 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 
 import { dispatchGetProducts } from '../../store/thunks';
 import { dispatchAddToCart } from '../../store/actions';
+
 import Card from '../../components/Card/Card';
 import './Shop.css';
+import SlidingMsg from '../../components/SlidingMsg/SlidingMsg';
 
 const Shop = (props) => {
     const { getProducts } = props;
+    const msgEl = useRef();
     useEffect(() => { getProducts() }, [getProducts]);
-    const [msgClass, setMsgClass] = useState(['shop__msg'])
 
     const handleClick = (id) => {
         props.addToCart(id)
-
-        const isMsgInvisible = msgClass.length < 2;
-        if (isMsgInvisible) {
-            setMsgClass(['shop__msg', 'shop__msg--show']);
-            setTimeout(() => { setMsgClass(['shop__msg']) }, 800);
-        }
-
+        msgEl.current.showMsg('Item added to cart!');
     }
 
     const hasArticles = props.products.length > 0;
@@ -36,9 +32,11 @@ const Shop = (props) => {
                 }</div>
                 : <div className="shop__list--empty">Currently there's no product available. Please contact the <strong>Admin</strong>!</div>
             }
-            <div className={msgClass.join(' ')}>
-                <span>Item added to cart!</span>
-            </div>
+            <SlidingMsg
+                ref={msgEl}
+                type="success"
+                time={400}
+            />
         </div>
     );
 };

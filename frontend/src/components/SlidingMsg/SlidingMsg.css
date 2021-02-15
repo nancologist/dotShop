@@ -1,0 +1,29 @@
+.sliding-msg {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;    
+    color: white;
+    display: inline-block;
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+    position: fixed;
+    bottom: 20px;
+    right: -300px;
+    transition: 200ms;
+}
+
+.sliding-msg--show {
+    right: 0;
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.error {
+    background-color: var(--error);
+}
+
+.normal {
+    background-color: var(--primary);
+}

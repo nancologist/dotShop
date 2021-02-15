@@ -5,6 +5,7 @@ import './Cart.css';
 import CartItem from '../../components/CartItem/CartItem';
 import CartSummary from '../../components/CartSummary/CartSummary';
 import { dispatchDecreaseItem, dispatchIncreaseItem } from '../../store/actions';
+import Coupon from '../../components/Coupon/Coupon';
 
 const Cart = (props) => {
     let sum = {
@@ -14,7 +15,11 @@ const Cart = (props) => {
     let title = 'Your cart is empty... :('
     let renderedContent = null;
 
-    const handleClick = (productId, type) => {
+    const handleCouponClick = (x) => {
+        console.log(x);
+    };
+
+    const handleQtyClick = (productId, type) => {
         switch (type) {
             case 'dec':
                 props.decreaseItem(productId);
@@ -39,21 +44,15 @@ const Cart = (props) => {
                                 <CartItem
                                     item={item}
                                     key={item.id}
-                                    minClicked={handleClick}
-                                    posClicked={handleClick}
+                                    minClicked={handleQtyClick}
+                                    posClicked={handleQtyClick}
                                 />
                             )
                         })}
                     </div>
                     <div className="cart__content__side">
                         <CartSummary sum={sum} />
-                        <div className="coupon border">
-                            <div className="coupon__title">Coupon</div>
-                            <div className="coupon__form">
-                                <input type="text" className="coupon__form__input"/>
-                                <button className="coupon__form__btn">Redeem</button>
-                            </div>
-                        </div>
+                        <Coupon clicked={handleCouponClick} />
                     </div>
                 </div>
             </Fragment>

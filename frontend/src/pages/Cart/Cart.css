@@ -4,9 +4,41 @@
 
 .cart__content {
     display: flex;
+
+}
+
+.cart__content__side {
+    min-width: 400px;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 
 .cart__content__items {
     width: 100%;
+}
+
+.coupon {
+    height: fit-content;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.coupon__title {
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.coupon__form {
+    margin: 20px 0;
+}
+
+.coupon__form__input {
+    height: 40px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
 }

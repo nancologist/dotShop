@@ -16,7 +16,7 @@ const Admin = () => {
         <div className="admin">
             <h1>Admin Page</h1>
             <p>Here we would have CRUD functionalities for Admin to control Products, but it's not a main goal of project. So for now we mock the CREATE functionality to add some products to our shop.</p>
-            <button className="admin__add-btn" onClick={postAddProducts}>ADD PRODUCTS</button>
+            <button className="admin__add-btn" onClick={postAddProducts}>ADD PRODUCTS & COUPONS TO DB</button>
         </div>
     )
 };

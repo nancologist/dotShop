@@ -12,11 +12,18 @@
 
 .App button {
     background-color: var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 5px;
     color: #fff;
     padding: 7px 10px;
 }
 
 .App button:hover {
-    opacity: 0.9;
+    background-color: white;
+    color: var(--primary);
+}
+
+.App input {
+    caret-color: var(--primary);
+    color: var(--primary)
 }

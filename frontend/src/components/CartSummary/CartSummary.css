@@ -1,6 +1,5 @@
 .sum {
     margin-left: 5px;
-    width: 50%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -10,6 +9,7 @@
 .sum__title {
     background-color: var(--primary);
     color: white;
+    font-weight: bold;
     padding: 10px;
 }
 

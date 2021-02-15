@@ -3,7 +3,7 @@ import './CartSummary.css';
 const CartSummary = ({ sum }) => {
     const { orderSum, coupon } = sum;
     return (
-        <div className="cart__content__sum sum border">
+        <div className="sum border">
             <div className="sum__title">Summary</div>
             <div className="sum__details">
                 <div className="sum__details__price">

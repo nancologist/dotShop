@@ -45,11 +45,16 @@ const Cart = (props) => {
                             )
                         })}
                     </div>
-                    <CartSummary sum={sum} />
-                </div>
-                <div className="cart__content__coupon coupon">
-                    <div className="coupon__title">Coupon</div>
-                    <input type="text" className="coupon__input"/>
+                    <div className="cart__content__side">
+                        <CartSummary sum={sum} />
+                        <div className="coupon border">
+                            <div className="coupon__title">Coupon</div>
+                            <div className="coupon__form">
+                                <input type="text" className="coupon__form__input"/>
+                                <button className="coupon__form__input">Redeem</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Fragment>
     }

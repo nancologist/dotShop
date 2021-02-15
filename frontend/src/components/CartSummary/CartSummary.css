@@ -1,0 +1,53 @@
+.sum {
+    margin-left: 5px;
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sum__title {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+}
+
+.sum__btn {
+    width: 50%;
+    margin: auto;
+}
+
+.sum__details {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 15px;
+}
+
+.sum__details > * {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.sum__details__price {
+    border-bottom: 1px solid #ccc;
+}
+
+.sum__details__coupon {
+    border-bottom: 1px solid #ccc;
+}
+
+.sum__details__coupon .num {
+    color: var(--error);
+}
+
+.sum__details__total {
+    font-weight: bold;
+}
+
+.sum__details__total .num {
+    color: var(--success);
+}

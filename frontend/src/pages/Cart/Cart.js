@@ -2,11 +2,16 @@ import { connect } from 'react-redux';
 
 import './Cart.css';
 import CartItem from '../../components/CartItem/CartItem';
+import CartSummary from '../../components/CartSummary/CartSummary';
 
 const Cart = (props) => {
     let title = 'Your cart is empty... :('
-    let orderSum = 0;
-    let coupon = 0;
+
+    const sum = {
+        orderSum: 0,
+        coupon: 0
+    }
+
     if (props.cartItems.length > 0) {
         title = 'Check items in your cart:'
     }
@@ -19,24 +24,7 @@ const Cart = (props) => {
                         <CartItem item={item} />
                     ))}
                 </div>
-                <div className="cart__content__sum sum border">
-                    <div className="sum__title">Summary</div>
-                    <div className="sum__details">
-                        <div className="sum__details__price">
-                            <span>Order Sum</span>
-                            <span className="num">{orderSum}</span>
-                        </div>
-                        <div className="sum__details__coupon">
-                            <span>Coupon </span>
-                            <span className="num">{coupon}</span>
-                        </div>
-                        <div className="sum__details__total">
-                            <span>Total Price</span>
-                            <span className="num">{orderSum - coupon}</span>
-                        </div>
-                    </div>
-                    <button className="sum__btn">Confirm Order</button>
-                </div>
+                <CartSummary sum={sum} />
             </div>
             <div className="cart__content__coupon coupon">
                 <div className="coupon__title">Coupon</div>

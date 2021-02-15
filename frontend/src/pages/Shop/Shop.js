@@ -34,7 +34,7 @@ const Shop = (props) => {
                         />
                     ))
                 }</div>
-                : <div className="shop__list--empty">Currently there's no product available, please come back later again.</div>
+                : <div className="shop__list--empty">Currently there's no product available. Please contact the <strong>Admin</strong>!</div>
             }
             <div className={msgClass.join(' ')}>
                 <span>Item added to cart!</span>

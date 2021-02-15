@@ -6,13 +6,12 @@ import CartItem from '../../components/CartItem/CartItem';
 import CartSummary from '../../components/CartSummary/CartSummary';
 
 const Cart = (props) => {
-    let title = 'Your cart is empty... :('
-    let renderedContent = null;
-
-    const sum = {
+    let sum = {
         orderSum: 0,
         coupon: 0
     }
+    let title = 'Your cart is empty... :('
+    let renderedContent = null;
 
     if (props.cartItems.length > 0) {
         title = 'Check items in your cart:'
@@ -20,9 +19,11 @@ const Cart = (props) => {
             <Fragment>
                 <div className="cart__content">
                     <div className="cart__content__items">
-                        {props.cartItems.map((item) => (
-                            <CartItem item={item} />
-                        ))}
+                        {props.cartItems.map((item) => {
+                            const { unit, price } = item;
+                            sum.orderSum += +(unit * price).toFixed(2);
+                            return <CartItem item={item} key={item.id} />
+                        })}
                     </div>
                     <CartSummary sum={sum} />
                 </div>

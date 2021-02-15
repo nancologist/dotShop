@@ -21,6 +21,10 @@
     align-items: center;
 }
 
+.cart__item__qty button {
+    font-weight: bold;
+}
+
 .cart__item__qty span {
     margin: 0 10px;
 }

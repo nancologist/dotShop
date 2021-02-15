@@ -1,22 +1,29 @@
+import { useImperativeHandle, forwardRef, useState } from 'react';
 import './CartSummary.css';
 
-const CartSummary = ({ sum }) => {
-    const { orderSum, coupon } = sum;
+const CartSummary = ({ sum }, ref) => {
+    const [ couponVal, setCouponVal ] = useState(0)
+    useImperativeHandle(ref, () => {
+        return {
+            getCoupon: (val) => { console.log(val); setCouponVal(val) }
+        };
+    })
+
     return (
         <div className="sum border">
             <div className="sum__title">Summary</div>
             <div className="sum__details">
                 <div className="sum__details__price">
                     <span>Order Sum</span>
-                    <span className="num">{orderSum.toFixed(2)} €</span>
+                    <span className="num">{sum.toFixed(2)} €</span>
                 </div>
                 <div className="sum__details__coupon">
                     <span>Coupon </span>
-                    <span className="num">{coupon}</span>
+                    <span className="num">{couponVal.toFixed(2)} €</span>
                 </div>
                 <div className="sum__details__total">
                     <span>Total Price</span>
-                    <span className="num">{(orderSum - coupon).toFixed(2)} €</span>
+                    <span className="num">{(sum + couponVal).toFixed(2)} €</span>
                 </div>
             </div>
             <button className="sum__btn">CHECKOUT</button>
@@ -24,4 +31,4 @@ const CartSummary = ({ sum }) => {
     );
 };
 
-export default CartSummary;
+export default forwardRef(CartSummary);

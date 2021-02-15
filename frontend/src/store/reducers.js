@@ -5,15 +5,16 @@ const initialState = {
     cart: []
 }
 
-const { GET_PRODUCTS, ADD_TO_CART } = actionTypes;
+const { GET_PRODUCTS, ADD_TO_CART, DECREASE_ITEM, INCREASE_ITEM } = actionTypes;
 
 export const shopReducer = (state = initialState, action) => {
+    const { productId } = action;
+    const item = state.cart.find(item => item.id === productId)
     switch (action.type) {
         case GET_PRODUCTS:
             return { ...state, products: action.products };
 
         case ADD_TO_CART:
-            const { productId } = action;
             const product = state.products.find(prod => prod.id === productId);
             let itemIndex = state.cart.findIndex(item => item.id === productId);
             if (itemIndex > -1) {
@@ -23,9 +24,16 @@ export const shopReducer = (state = initialState, action) => {
             const newItem = { ...product, unit: 1 };
             return { ...state, cart: [ ...state.cart, newItem ]};
 
-    
-        default:
-            return state;
+        case DECREASE_ITEM:
+            item.unit--
+            console.log(item.unit);
+            break;
+
+        case INCREASE_ITEM:
+            item.unit++
+            console.log(item.unit);
+            break;
     }
+    return state;
 }
     

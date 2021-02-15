@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './Cart.css';
 import CartItem from '../../components/CartItem/CartItem';
 import CartSummary from '../../components/CartSummary/CartSummary';
+import { dispatchDecreaseItem, dispatchIncreaseItem } from '../../store/actions';
 
 const Cart = (props) => {
     let sum = {
@@ -12,6 +13,18 @@ const Cart = (props) => {
     }
     let title = 'Your cart is empty... :('
     let renderedContent = null;
+
+    const handleClick = (productId, type) => {
+        switch (type) {
+            case 'dec':
+                props.decreaseItem(productId);
+                break;
+        
+            case 'inc':
+                props.increaseItem(productId);
+                break;
+        }
+    }
 
     if (props.cartItems.length > 0) {
         title = 'Check items in your cart:'
@@ -22,7 +35,14 @@ const Cart = (props) => {
                         {props.cartItems.map((item) => {
                             const { unit, price } = item;
                             sum.orderSum += +(unit * price).toFixed(2);
-                            return <CartItem item={item} key={item.id} />
+                            return (
+                                <CartItem
+                                    item={item}
+                                    key={item.id}
+                                    minClicked={handleClick}
+                                    posClicked={handleClick}
+                                />
+                            )
                         })}
                     </div>
                     <CartSummary sum={sum} />
@@ -47,6 +67,9 @@ const mapStateToProps = (reduxState) => {
     };
 }
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+    decreaseItem: (id) => dispatchDecreaseItem(id),
+    increaseItem: (id) => dispatchIncreaseItem(id)
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

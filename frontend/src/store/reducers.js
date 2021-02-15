@@ -15,24 +15,13 @@ export const shopReducer = (state = initialState, action) => {
         case ADD_TO_CART:
             const { productId } = action;
             const product = state.products.find(prod => prod.id === productId);
-            
             let itemIndex = state.cart.findIndex(item => item.id === productId);
-            
             if (itemIndex > -1) {
                 state.cart[itemIndex].unit++;
                 return state
             }
-
-            const newItem = {
-                ...product,
-                unit: 1
-            }
-            
-
-            return {
-                ...state,
-                cart: [ ...state.cart, newItem ]
-            }
+            const newItem = { ...product, unit: 1 };
+            return { ...state, cart: [ ...state.cart, newItem ]};
 
     
         default:

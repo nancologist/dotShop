@@ -5,7 +5,7 @@ import './Card.css'
 const Card = ({ product, clicked }) => {
     const { id, name, price, imgPath } = product;
     return (
-        <div className="card">
+        <div className="card border">
             <div className="card__img-container">
                 <img src={ imgPath } />
             </div>

@@ -17,7 +17,7 @@ const Shop = (props) => {
         const isMsgInvisible = msgClass.length < 2;
         if (isMsgInvisible) {
             setMsgClass(['shop__msg', 'shop__msg--show']);
-            setTimeout(() => { setMsgClass(['shop__msg']) }, 2000);
+            setTimeout(() => { setMsgClass(['shop__msg']) }, 800);
         }
 
     }

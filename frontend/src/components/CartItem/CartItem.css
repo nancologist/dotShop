@@ -1,0 +1,31 @@
+.price {
+    color: var(--success);
+    /* font-weight: bold; */
+}
+
+.cart__item {
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.cart__item__pic {
+    height: 60px;
+}
+
+.cart__item__qty {
+    display: flex;
+    align-items: center;
+}
+
+.cart__item__qty span {
+    margin: 0 10px;
+}
+
+.cart__item__qty button {
+    border-radius: 0;
+}
+

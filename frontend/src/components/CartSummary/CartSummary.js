@@ -1,7 +1,7 @@
 import { useImperativeHandle, forwardRef, useState } from 'react';
 import './CartSummary.css';
 
-const CartSummary = ({ sum }, ref) => {
+const CartSummary = ({ sum, clicked }, ref) => {
     const [ couponVal, setCouponVal ] = useState(0)
     useImperativeHandle(ref, () => {
         return {
@@ -26,7 +26,7 @@ const CartSummary = ({ sum }, ref) => {
                     <span className="num">{(sum + couponVal).toFixed(2)} €</span>
                 </div>
             </div>
-            <button className="sum__btn">CHECKOUT</button>
+            <button className="sum__btn" onClick={clicked}>CHECKOUT</button>
         </div>
     );
 };

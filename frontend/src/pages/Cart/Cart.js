@@ -9,7 +9,7 @@ import Coupon from '../../components/Coupon/Coupon';
 import SlidingMsg from '../../components/SlidingMsg/SlidingMsg';
 
 import { dispatchDecreaseItem, dispatchIncreaseItem } from '../../store/actions';
-// import { dispatchValidateCoupon } from '../../store/thunks';
+import { dispatchSubmitCheckout } from '../../store/thunks';
 
 const Cart = (props) => {
     let orderSum = 0
@@ -60,6 +60,10 @@ const Cart = (props) => {
                 props.increaseItem(productId);
                 break;
         }
+    };
+
+    const handleCheckout = () => {
+        props.submitCheckout(couponCode)
     }
 
     if (props.cartItems.length > 0) {
@@ -82,8 +86,11 @@ const Cart = (props) => {
                         })}
                     </div>
                     <div className="cart__content__side">
-                        <CartSummary sum={orderSum} ref={cartSummaryCmp} />
-                        <Coupon clicked={handleCouponClick} />
+                        <CartSummary
+                            sum={orderSum} ref={cartSummaryCmp}
+                            clicked={handleCheckout}
+                        />
+                        <Coupon clicked={handleCouponSubmit} ref={couponEl} />
                     </div>
                 </div>
                 <SlidingMsg

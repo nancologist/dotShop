@@ -17,12 +17,16 @@ const Cart = (props) => {
     let renderedContent = null;
 
     const msgEl = useRef();
+    const couponEl = useRef();
     const cartSummaryCmp = useRef();
-    const [couponCode, setCouponCode] = useState(0);
-    const handleCouponClick = async (code) => {
+    const [couponCode, setCouponCode] = useState(undefined);
+    const handleCouponSubmit = async (code) => {
         let res;
         try {
-            res = await axios.post('http://localhost:8989/shop/coupon', { couponId: code });
+            res = await axios.post(
+                'http://localhost:8989/shop/coupon',
+                { couponId: code }
+            );
         } catch (error) {
             console.log(error);
         }
@@ -33,6 +37,7 @@ const Cart = (props) => {
             return;
         }
         
+        couponEl.current.disableInput();
         const { coupon } = res.data;
         if (coupon.type === 'amount') {
             cartSummaryCmp.current.getCoupon(-coupon.value)
@@ -105,7 +110,7 @@ const mapStateToProps = (reduxState) => {
 const mapDispatchToProps = {
     decreaseItem: (id) => dispatchDecreaseItem(id),
     increaseItem: (id) => dispatchIncreaseItem(id),
-    // validateCoupon: (code) => dispatchValidateCoupon(code)
+    submitCheckout: (couponCode) => dispatchSubmitCheckout(couponCode)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

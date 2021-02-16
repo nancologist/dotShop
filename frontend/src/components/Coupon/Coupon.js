@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useImperativeHandle, forwardRef } from "react";
 
-const Coupon = ({ clicked }) => {
+const Coupon = ({ clicked }, cmpRef) => {
     const [code, setCode] = useState('');
+    const [inputDisabled, setInputDisabled] = useState(false)
+    const [btnDisabled, setBtnDisabled] = useState(true)
+
+    useImperativeHandle(cmpRef, () => ({
+        disableInput: () => {
+            setInputDisabled(true);
+        }
+    }));
 
     const handleInputChange = (e) => {
-        const input = e.target.value;
-        setCode(input.toUpperCase())
+        const val = e.target.value;
+        if (!val) {
+            setBtnDisabled(true)
+        } else {
+            setBtnDisabled(false);
+        }
+        setCode(val.toUpperCase())
     }
 
     return (
@@ -17,10 +30,12 @@ const Coupon = ({ clicked }) => {
                     className="coupon__form__input"
                     onChange={handleInputChange}
                     value={code}
+                    disabled={inputDisabled}
                 />
                 <button 
                     className="coupon__form__btn"
                     onClick={() => clicked(code)}
+                    disabled={btnDisabled}
                 >
                     Redeem
                 </button>
@@ -29,4 +44,4 @@ const Coupon = ({ clicked }) => {
     );
 };
 
-export default Coupon;
+export default forwardRef(Coupon);

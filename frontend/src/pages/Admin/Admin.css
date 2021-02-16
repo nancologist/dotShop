@@ -1,3 +1,7 @@
 .admin {
     text-align: left;
 }
+
+.admin__add-btn {
+    margin: 20px 0;
+}

@@ -35,10 +35,10 @@
 7. Coupon codes will be validated by backend and database.
 
 8. Currently there are 4 coupons, which will be added to database by Admin:
-    * New Year - Code: X68SWL
-    * Birthday - Code: F32TM9
-    * Summer - Code: R5V9BU
-    * Easter - Code: K18XQH
+    * New Year | Code: X68SWL | 5%
+    * Summer | Code: R5V9BU | 12%
+    * Birthday | Code: F32TM9 | 6€
+    * Easter | Code: K18XQH | 10€
 
 You can try one of these codes as a valid coupon.
 

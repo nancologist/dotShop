@@ -1,13 +1,23 @@
 const BaseController = require('./index');
 const Product = require('../models/product');
 const Coupon = require('../models/coupon');
+const Order = require('../models/order');
 
 class ShopController extends BaseController {
     constructor(mainRoute) {
         super(mainRoute);
-        
+
         this.router.get('/', this.getProducts);
         this.router.post('/coupon', this.validateCoupon);
+        this.router.post('/order', this.postOrder);
+    }
+
+    postOrder(req, res, next) {
+        const { order: orderItems, couponCode } = req.body
+        const sum = Order.getSum(orderItems);;
+        const discount = Order.getDiscount(couponCode, sum);
+        const totalPrice = sum - discount;
+        new Order(orderItems, totalPrice).save()
     }
 
     validateCoupon(req, res, next) {

@@ -10,7 +10,6 @@ class Order {
 
     save() {
         DB.orders.push(this);
-        console.log(DB);
     }
 
     static getDiscount(couponCode, sum) {

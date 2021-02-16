@@ -50,7 +50,7 @@ const Cart = (props) => {
         setCouponCode(code);
     };
 
-    const handleQtyClick = (productId, type) => {
+    const handleQtyChange = (productId, type) => {
         switch (type) {
             case 'dec':
                 props.decreaseItem(productId);
@@ -75,8 +75,8 @@ const Cart = (props) => {
                                 <CartItem
                                     item={item}
                                     key={item.id}
-                                    minClicked={handleQtyClick}
-                                    posClicked={handleQtyClick}
+                                    minClicked={handleQtyChange}
+                                    posClicked={handleQtyChange}
                                 />
                             )
                         })}

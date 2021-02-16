@@ -42,7 +42,6 @@
 
 You can try one of these codes as a valid coupon.
 
-
 ___
 
 ## 2. Dependencies
@@ -78,14 +77,46 @@ ___
 * No real Admin functionalities (for now).
 * No responsive design for small devices (for now).
 * No search function for the products.
+* No Authentication and Roles. So customer view and admin view render both at the same time.
 
 ___
 
-## 5. Possible Enhancements
+## 5. Interfaces Between Frontend and Backend
+
+### 5.1. Frontend
+Most of the interactions with backend take place in ``forntend/src/store/thunks.js``. Thanks to the ``Redux-Thunk`` middleware it makes an async request possible.  
+But there are some a few cases which the interaction with backend takes place in the component itself. Like validating the coupons in ``frontend/src/pages/Cart.js``. In these cases the result or better to say the Response of the Request has a local use in the Component so it would be an overkill to send the request through Redux and take it back from there.
+
+### 5.2. Backend
+Like all usual MVC backend apps all the interactions takes place in the controller (``backend/controllers/``).  
+It should be noticed that because of CORS-Restriction on Browser, some headers should have been set to allow the CORS for HTTP Requests coming from Frontend. (_Look at ``backend/middlewares/index.js``_)
+___
+
+## 6. Design Patterns
+
+### 6.1. Backend
+MVC, one of the cleanest way to create the backend application. The View are JSON Responses. Controllers are located in ``backend/controllers/``. They extend a ``BaseController`` class located in ``backend/controllers/index.js``. And the Models are the blueprints for the Entities which we have in the application (products, coupons and orders). CRUD functionalities on the Database take place in the methods of these Model Classes.
+
+### 6.2. Frontend
+__Data Down, Action Up__ this is one of the best practices and Design Patterns for the trend frameworks like VueJS, ReactJS and AngularJS.  
+For a better explanation I would first explain Stateful and Stateless Components:
+
+* __Stateful Component__: is a component which has own states and modifies and could communicate with backend or state manager (in our case Redux). A good example for such component in our app would be ``Cart.js`` , ``Shop.js``
+
+* __Stateless Component__: is a component which does not have any state and receives its properties from the parent component. This component is the interface and responsible for use interactions with the application and serves as only representation layer. This type of components are also called Dumb Components!  
+The benefit of having stateless components is that they are more abstract and can be used throughout the application in different places (__reusability__).
+
+One of the best example in the app is ``<SlidingMsg />`` which is located in ``frontend/src/components/SlidingMsg/SlidingMsg.js`` and I have used it in many places to notify the user about the application responses.
+
+So the concept behind the __Data Down, Action Up__ is to have more Stateless Components
+___
+
+## 7. Possible Enhancements
 
 * Implementing a database (MongoDB or MySQL for example)
 * Admin Panel to update, delete or create ``Products``.
 * Search functions for the products.
+* Authentication and Roles.
 
 ___
  

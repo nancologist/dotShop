@@ -119,4 +119,15 @@ ___
 * Authentication and Roles.
 
 ___
+
+## 8. Screen shots
+
+__Home Page:__
+![home-page](https://i.ibb.co/64pT5TP/01.png)
+
+__Shop Page:__
+![shop-page](https://i.ibb.co/ZznnkV7/02.png)
+
+__Cart page:__
+![cart-page](https://i.ibb.co/YpJF8np/03.png)
  

@@ -8,7 +8,7 @@ const initialState = {
 
 const {
     GET_PRODUCTS, ADD_TO_CART, DECREASE_ITEM,
-    INCREASE_ITEM, POST_ORDER_SUCCESS
+    INCREASE_ITEM, POST_ORDER_SUCCESS, RESET_ORDER_STATE
 } = actionTypes;
 
 export const shopReducer = (state = initialState, action) => {
@@ -64,6 +64,12 @@ export const shopReducer = (state = initialState, action) => {
                 ...state,
                 cart: [],
                 orderSuccess: true
+            }
+        
+        case RESET_ORDER_STATE:
+            return {
+                ...state,
+                orderSuccess: false
             }
     }
     return state;

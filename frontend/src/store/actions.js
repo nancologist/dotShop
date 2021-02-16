@@ -3,11 +3,12 @@ export const actionTypes = {
     ADD_TO_CART: 'ADD_TO_CART',
     DECREASE_ITEM: 'DECREASE_ITEM',
     INCREASE_ITEM: 'INCREASE_ITEM',
-    POST_ORDER_SUCCESS: 'POST_ORDER_SUCCESS'
+    POST_ORDER_SUCCESS: 'POST_ORDER_SUCCESS',
+    RESET_ORDER_STATE: 'RESET_ORDER_STATE'
 }
 
 const {
-    GET_PRODUCTS, ADD_TO_CART,
+    GET_PRODUCTS, ADD_TO_CART, RESET_ORDER_STATE,
     DECREASE_ITEM, INCREASE_ITEM, POST_ORDER_SUCCESS
 } = actionTypes;
 
@@ -43,4 +44,10 @@ export const postOrderSuccess = () => {
     return {
         type: POST_ORDER_SUCCESS,
     };
+}
+
+export const dispatchResetOrderState = () => {
+    return {
+        type: RESET_ORDER_STATE
+    }
 }

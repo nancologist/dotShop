@@ -9,7 +9,9 @@ import CartSummary from '../../components/CartSummary/CartSummary';
 import Coupon from '../../components/Coupon/Coupon';
 import SlidingMsg from '../../components/SlidingMsg/SlidingMsg';
 
-import { dispatchDecreaseItem, dispatchIncreaseItem } from '../../store/actions';
+import { 
+    dispatchDecreaseItem, dispatchIncreaseItem, dispatchResetOrderState
+} from '../../store/actions';
 import { dispatchSubmitCheckout } from '../../store/thunks';
 
 const Cart = (props) => {
@@ -106,7 +108,10 @@ const Cart = (props) => {
     if (props.orderSuccess) {
         title = 'We have received your order. Thank you! :)';
         setTimeout(
-            () => { history.push('/') },
+            () => {
+                history.push('/');
+                props.resetReduxState();
+            },
             2000
         )
     }
@@ -129,7 +134,8 @@ const mapStateToProps = (reduxState) => {
 const mapDispatchToProps = {
     decreaseItem: (id) => dispatchDecreaseItem(id),
     increaseItem: (id) => dispatchIncreaseItem(id),
-    submitCheckout: (couponCode) => dispatchSubmitCheckout(couponCode)
+    submitCheckout: (couponCode) => dispatchSubmitCheckout(couponCode),
+    resetReduxState: () => dispatchResetOrderState()
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

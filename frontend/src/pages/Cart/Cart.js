@@ -1,4 +1,4 @@
-import { Fragment, useRef } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -18,6 +18,7 @@ const Cart = (props) => {
 
     const msgEl = useRef();
     const cartSummaryCmp = useRef();
+    const [couponCode, setCouponCode] = useState(0);
     const handleCouponClick = async (code) => {
         let res;
         try {
@@ -37,7 +38,11 @@ const Cart = (props) => {
             cartSummaryCmp.current.getCoupon(-coupon.value)
         }
 
-        // TODO: Precent ...
+        if (coupon.type === 'percent') {
+            cartSummaryCmp.current.getCoupon(-(orderSum * coupon.value / 100));
+        }
+
+        setCouponCode(code);
     };
 
     const handleQtyClick = (productId, type) => {

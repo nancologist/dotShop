@@ -5,7 +5,7 @@ const CartSummary = ({ sum }, ref) => {
     const [ couponVal, setCouponVal ] = useState(0)
     useImperativeHandle(ref, () => {
         return {
-            getCoupon: (val) => { console.log(val); setCouponVal(val) }
+            getCoupon: (val) => { setCouponVal(val) }
         };
     })
 

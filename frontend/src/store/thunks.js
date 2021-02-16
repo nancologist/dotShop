@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getProducts } from './actions'
+import { getProducts, postOrderSuccess } from './actions'
 
 export const dispatchGetProducts = () => {
     return async (dispatch) => {
@@ -20,8 +20,6 @@ export const dispatchSubmitCheckout = (couponCode) => {
         let res;
 
         const { cart: order } = getState();
-        console.log(couponCode);
-
         try {
             res = await axios.post(
                 'http://localhost:8989/shop/order',
@@ -31,6 +29,6 @@ export const dispatchSubmitCheckout = (couponCode) => {
             console.log(error);
         }
 
-        // dispatch(action...) after Response!
+        dispatch(postOrderSuccess());
     }
 };

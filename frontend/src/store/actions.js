@@ -2,10 +2,14 @@ export const actionTypes = {
     GET_PRODUCTS: 'GET_PRODUCTS',
     ADD_TO_CART: 'ADD_TO_CART',
     DECREASE_ITEM: 'DECREASE_ITEM',
-    INCREASE_ITEM: 'INCREASE_ITEM'
+    INCREASE_ITEM: 'INCREASE_ITEM',
+    POST_ORDER_SUCCESS: 'POST_ORDER_SUCCESS'
 }
 
-const { GET_PRODUCTS, ADD_TO_CART, DECREASE_ITEM, INCREASE_ITEM } = actionTypes;
+const {
+    GET_PRODUCTS, ADD_TO_CART,
+    DECREASE_ITEM, INCREASE_ITEM, POST_ORDER_SUCCESS
+} = actionTypes;
 
 export const getProducts = (products) => {
     return {
@@ -34,3 +38,9 @@ export const dispatchIncreaseItem = (id) => {
         productId: id
     };
 };
+
+export const postOrderSuccess = () => {
+    return {
+        type: POST_ORDER_SUCCESS,
+    };
+}

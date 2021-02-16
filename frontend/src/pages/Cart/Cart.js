@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState } from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import './Cart.css';
@@ -100,6 +101,16 @@ const Cart = (props) => {
                 />
             </Fragment>
     }
+
+    const history = useHistory();
+    if (props.orderSuccess) {
+        title = 'We have received your order. Thank you! :)';
+        setTimeout(
+            () => { history.push('/') },
+            2000
+        )
+    }
+
     return (
         <div className="cart">
             <h3 className="cart__title">{title}</h3>
@@ -110,7 +121,8 @@ const Cart = (props) => {
 
 const mapStateToProps = (reduxState) => {
     return {
-        cartItems: reduxState.cart
+        cartItems: reduxState.cart,
+        orderSuccess: reduxState.orderSuccess
     };
 }
 

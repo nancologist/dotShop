@@ -17,7 +17,8 @@ class ShopController extends BaseController {
         const sum = Order.getSum(orderItems);;
         const discount = Order.getDiscount(couponCode, sum);
         const totalPrice = sum - discount;
-        new Order(orderItems, totalPrice).save()
+        new Order(orderItems, totalPrice).save();
+        res.json({ msg: "Your order has been submitted. Thank you! :)"});
     }
 
     validateCoupon(req, res, next) {

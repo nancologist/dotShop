@@ -2,15 +2,18 @@ import { actionTypes } from './actions';
 
 const initialState = {
     products: [],
-    cart: []
+    cart: [],
+    orderSuccess: false
 }
 
-const { GET_PRODUCTS, ADD_TO_CART, DECREASE_ITEM, INCREASE_ITEM } = actionTypes;
+const {
+    GET_PRODUCTS, ADD_TO_CART, DECREASE_ITEM,
+    INCREASE_ITEM, POST_ORDER_SUCCESS
+} = actionTypes;
 
 export const shopReducer = (state = initialState, action) => {
     const { productId } = action;
     const findProduct = (id) => state.products.find(prod => prod.id === id);
-    const findItem = (id) => state.cart.find(item => item.id === id);
     const findItemIndex = (id) => state.cart.findIndex(item => item.id === id);
     
     switch (action.type) {
@@ -55,6 +58,13 @@ export const shopReducer = (state = initialState, action) => {
                 cart: newCart2
             }
             return state
+        
+        case POST_ORDER_SUCCESS:
+            return {
+                ...state,
+                cart: [],
+                orderSuccess: true
+            }
     }
     return state;
 }

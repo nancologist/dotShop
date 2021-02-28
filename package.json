@@ -2,16 +2,20 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "backend/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node ./backend/app.js"
   },
   "author": "MortezaJalilifar",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "helmet": "^4.4.1"
+  },
+  "engines": {
+    "node": "10.23.1"
   },
   "devDependencies": {}
 }

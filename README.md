@@ -1,8 +1,21 @@
 # <span style="color: #97bf0d;">dot</span><span style="color: #004272;">Shop</span>
+Go to [shop](https://react-hooks-1ed5b.firebaseapp.com/)!
 
 ## 0. Hosting
+* Client:
+    * Deployed on Firebase
+    * Environment Variables:
+        * ``REACT_APP_SERVER_URL``
+            * Dev Mode: localhost:8989
+            * Prod Mode: https://react-hooks-1ed5b.web.app
+
 * Server:
-    * Deployed on Heroku.com (``package.json`` moved to root directory)
+    * Deployed on Heroku.com (``package.json`` and ``package-lock.json`` moved to root directory)
+    * Environment Variables:
+        * ``CLIENT_URL`` : To allow the CORS. (value: ``https://react-hooks-1ed5b.web.app``).
+        * ``PORT`` : not set.
+
+___
 
 ## 1. Install and run the project
 

@@ -3,13 +3,14 @@ import axios from 'axios';
 
 import './Admin.css';
 import SlidingMsg from '../../components/SlidingMsg/SlidingMsg';
+const { REACT_APP_SERVER_URL } = process.env;
 
 const Admin = () => {
     const msgEl = useRef();
     const postAddProducts = async () => {
         let res;
         try {
-            res = await axios.post('http://localhost:8989/admin');
+            res = await axios.post(REACT_APP_SERVER_URL + '/admin');
         } catch (error) {
             console.log(error);
         }

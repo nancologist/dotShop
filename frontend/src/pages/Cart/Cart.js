@@ -13,6 +13,7 @@ import {
     dispatchDecreaseItem, dispatchIncreaseItem, dispatchResetOrderState
 } from '../../store/actions';
 import { dispatchSubmitCheckout } from '../../store/thunks';
+const { REACT_APP_SERVER_URL } = process.env;
 
 const Cart = (props) => {
     let orderSum = 0
@@ -27,7 +28,7 @@ const Cart = (props) => {
         let res;
         try {
             res = await axios.post(
-                'http://localhost:8989/shop/coupon',
+                REACT_APP_SERVER_URL + '/shop/coupon',
                 { couponId: code }
             );
         } catch (error) {

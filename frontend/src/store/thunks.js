@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { getProducts, postOrderSuccess } from './actions'
+const { REACT_APP_SERVER_URL } = process.env;
 
 export const dispatchGetProducts = () => {
     return async (dispatch) => {
         let res;
 
         try {
-            res = await axios.get('http://localhost:8989/shop');
+            res = await axios.get(REACT_APP_SERVER_URL + '/shop');
         } catch (error) {
             console.log(error);
         }
@@ -22,7 +23,7 @@ export const dispatchSubmitCheckout = (couponCode) => {
         const { cart: order } = getState();
         try {
             res = await axios.post(
-                'http://localhost:8989/shop/order',
+                REACT_APP_SERVER_URL + '/shop/order',
                 { order, couponCode }
             );
         } catch (error) {

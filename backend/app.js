@@ -6,7 +6,7 @@ const ShopController = require('./controllers/shop');
 const AdminController = require('./controllers/admin');
 const { allowCORS } = require('./middlewares');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8989;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000'
 
 new Server({

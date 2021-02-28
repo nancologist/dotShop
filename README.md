@@ -1,5 +1,9 @@
 # <span style="color: #97bf0d;">dot</span><span style="color: #004272;">Shop</span>
 
+## 0. Hosting
+* Server:
+    * Deployed on Heroku.com (``package.json`` moved to root directory)
+
 ## 1. Install and run the project
 
 ### 1.1. Install
@@ -60,6 +64,9 @@ ___
 * ``redux-thunk`` : a middleware to handle async functions for Redux Actions.
 * ``@mdi/js`` : Material Design Icons
 * ``@mdi/react`` : Helper components to integrate Material Design icons.
+
+### 2.3. Deployment
+* Securing Response Headers: ``helmet``
 
 ___
 
